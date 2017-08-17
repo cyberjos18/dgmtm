@@ -13,7 +13,7 @@ use dgmtm\Http\Controllers\Controller;
 class InventarioController extends Controller
 {
     /**
-     * Display a listing of the resource. cxcxc
+     * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
