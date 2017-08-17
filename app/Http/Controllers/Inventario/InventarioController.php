@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 
 use dgmtm\Http\Requests;
 use dgmtm\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Session;
 
 class InventarioController extends Controller
 {
@@ -48,7 +49,25 @@ class InventarioController extends Controller
      */
     public function store(CreateInventarioEntradaRequest $request)
     {
-        //
+        $equipos=new Equipo();
+        $equipos->centro_id=$request->centro_id;
+        $equipos->servicio_id=$request->servicio_id;
+        $equipos->nomb_equipo=mb_strtoupper($request->nomb_equipo);
+        $equipos->marca_equipo=mb_strtoupper($request->marca_equipo);
+        $equipos->modelo_equipo=mb_strtoupper($request->modelo_equipo);
+        $equipos->serial_equipo=mb_strtoupper($request->serial_equipo);
+        $equipos->bien_nacional=mb_strtoupper($request->bien_nacional);
+        $equipos->equipo_garantia=mb_strtoupper($request->equipo_garantia);
+        $equipos->responsable_garantia=mb_strtoupper($request->responsable_garantia);
+        $equipos->duracion_garantia=mb_strtoupper($request->duracion_garantia);
+        $equipos->observaciones_equipo=mb_strtoupper($request->observaciones_equipo);
+        $equipos->save();
+        $insert=trans('validation.attributes.message.insert');
+        $bandera='insert';
+        Session::flash('bandera',$bandera);
+        Session::flash('message',$insert);
+        return redirect()->route('inventario.equipos.index');
+
     }
 
     /**

@@ -19,8 +19,5 @@
     {!! Form::label('nomb_localidad','Localidad') !!}
     {!! Form::select('localidad_id',[''],null,['id'=>'localidad_id','class'=>'form-control','placeholder'=>'Seleccione la localidad...']) !!}
 </div>
-<div class="form-group">
-    {!! Form::label('modelo_equipo','Modelo') !!}
-    {!! Form::text('modelo_equipo',null,['id'=>'modelo_equipo','class'=>'form-control','placeholder'=>'Por favor ingrese el modelo del equipo']) !!}
-</div>
+
 
