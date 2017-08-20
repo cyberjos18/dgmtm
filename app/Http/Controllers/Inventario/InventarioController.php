@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Session;
 class InventarioController extends Controller
 {
     /**
-     * Display a listing of the resource.ss
+     * Display a listing of the resource
      *
      * @return \Illuminate\Http\Response 
      */
